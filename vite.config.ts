@@ -1,25 +1,23 @@
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, readdirSync, statSync } from "node:fs";
 import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
-import { basename, join, resolve } from "node:path";
+import { basename, extname, join, resolve } from "node:path";
 import { jsxPlugin } from "dreamland/vite";
 import { defineConfig, loadEnv, type Plugin } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
-const STEAM_SHEETS = [
-	"GJ_GameSheet-hd.plist",
-	"GJ_GameSheet-hd.png",
-	"GJ_GameSheet02-hd.plist",
-	"GJ_GameSheet02-hd.png",
-	"GJ_GameSheetGlow-hd.plist",
-	"GJ_GameSheetGlow-hd.png",
-	"bumpEffect.plist",
-	"ringEffect.plist",
-];
+const STEAM_EXTS = new Set([".png", ".plist", ".fnt"]);
+
+function globSteamAssets(steamPath: string): string[] {
+	if (!existsSync(steamPath)) return [];
+	return readdirSync(steamPath).filter((file) => STEAM_EXTS.has(extname(file)));
+}
 
 const MIME: Record<string, string> = {
 	".png": "image/png",
 	".plist": "application/xml",
+	".fnt": "text/plain",
+	".json": "application/json",
 };
 
 const GD_ICON_CDN =
@@ -41,7 +39,8 @@ async function createFavicon(): Promise<string | null> {
 	}
 }
 
-function steamAssetsPlugin(steamPath: string, files: string[]): Plugin {
+function steamAssetsPlugin(steamPath: string): Plugin {
+	const files = globSteamAssets(steamPath);
 	const fileMap = new Map(
 		files.map((file) => [`/assets/steam/${file}`, resolve(steamPath, file)]),
 	);
@@ -107,7 +106,7 @@ export default defineConfig(({ mode }) => {
 		preview: { port: 3000 },
 		plugins: [
 			jsxPlugin(),
-			steamAssetsPlugin(steamPath, STEAM_SHEETS),
+			steamAssetsPlugin(steamPath),
 			VitePWA({
 				strategies: "injectManifest",
 				srcDir: "src",

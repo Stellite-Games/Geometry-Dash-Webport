@@ -1,5 +1,5 @@
 {
-	"name": "gd-web",
+	"name": "gd-webport",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -11,7 +11,9 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
+		"@terbiumos/tfs": "^1.0.23",
 		"dreamland": "^0.1.3",
+		"@mercuryworkshop/libcurl-transport": "^2.0.0",
 		"pako": "^2.1.0",
 		"tslog": "^4.9.3"
 	},

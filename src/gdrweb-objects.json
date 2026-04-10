@@ -1,0 +1,616 @@
+{
+	"1": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"2": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"3": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"4": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"5": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"6": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"7": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"8": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"9": { "color_type": "Black", "default_base_color_channel": 1004 },
+	"15": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"16": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"17": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"18": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"19": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"20": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"21": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"39": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"40": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "plank_01_color_001.png", "color_type": "Black", "z": -1 }
+		]
+	},
+	"41": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"48": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"49": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"50": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"51": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"52": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"53": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"54": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"60": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"61": { "color_type": "Black", "default_base_color_channel": 1004 },
+	"62": {
+		"color_type": "Black",
+		"default_base_color_channel": 1004,
+		"children": [
+			{
+				"texture": "blockOutline_02_001.png",
+				"color_type": "Base",
+				"y": 7.25,
+				"z": 1
+			}
+		]
+	},
+	"63": {
+		"color_type": "Black",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "blockOutline_03_001.png", "color_type": "Base", "z": 1 }
+		]
+	},
+	"64": {
+		"color_type": "Black",
+		"default_base_color_channel": 1004,
+		"children": [
+			{
+				"texture": "blockOutline_06_001.png",
+				"color_type": "Base",
+				"x": 7.5,
+				"y": -7.5,
+				"z": 1
+			}
+		]
+	},
+	"65": {
+		"color_type": "Black",
+		"default_base_color_channel": 1004,
+		"children": [
+			{
+				"texture": "blockOutline_02_001.png",
+				"color_type": "Base",
+				"y": 7.25,
+				"z": 1
+			}
+		]
+	},
+	"66": {
+		"color_type": "Black",
+		"default_base_color_channel": 1004,
+		"children": [
+			{
+				"texture": "blockOutline_02_001.png",
+				"color_type": "Base",
+				"y": 7.25,
+				"z": 1
+			}
+		]
+	},
+	"68": {
+		"color_type": "Black",
+		"default_base_color_channel": 1004,
+		"children": [
+			{
+				"texture": "blockOutline_02_001.png",
+				"color_type": "Base",
+				"y": 7.25,
+				"z": 1
+			}
+		]
+	},
+	"69": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_c_05_001.png", "color_type": "Base", "z": -1 }
+		]
+	},
+	"70": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_c_05_001.png", "color_type": "Base", "z": -1 }
+		]
+	},
+	"71": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_c_05_001.png", "color_type": "Base", "z": -1 }
+		]
+	},
+	"72": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_c_05_001.png", "color_type": "Base", "z": -1 }
+		]
+	},
+	"73": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"74": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_c_05_001.png", "color_type": "Base", "z": -1 }
+		]
+	},
+	"75": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_c_05_001.png", "color_type": "Base", "z": -1 },
+			{
+				"texture": "blockOutline_05_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"scale_x": -1
+			}
+		]
+	},
+	"76": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_d_05_001.png", "color_type": "Base", "z": -1 },
+			{
+				"texture": "lightsquare_04_02_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"scale_y": -1
+			},
+			{
+				"texture": "lightsquare_04_02_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"rot": -90
+			},
+			{
+				"texture": "lightsquare_04_02_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"rot": 90
+			}
+		]
+	},
+	"77": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_d_05_001.png", "color_type": "Base", "z": -1 }
+		]
+	},
+	"78": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_d_05_001.png", "color_type": "Base", "z": -1 },
+			{
+				"texture": "lightsquare_04_02_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"rot": 90
+			}
+		]
+	},
+	"80": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"81": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_d_05_001.png", "color_type": "Base", "z": -1 },
+			{
+				"texture": "lightsquare_04_02_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"rot": -90
+			},
+			{
+				"texture": "lightsquare_04_02_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"rot": 90
+			}
+		]
+	},
+	"82": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_d_05_001.png", "color_type": "Base", "z": -1 },
+			{
+				"texture": "lightsquare_04_02_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"rot": -90
+			}
+		]
+	},
+	"83": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"85": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005,
+		"children": [
+			{
+				"texture": "d_cogwheel_01_001.png",
+				"color_type": "Detail",
+				"x": -0.18000030517578125,
+				"z": 1,
+				"flip_x": true
+			},
+			{
+				"texture": "d_cogwheel_01_001.png",
+				"color_type": "Detail",
+				"x": -0.18000030517578125,
+				"y": 0.18000030517578125,
+				"z": 1,
+				"flip_x": true,
+				"flip_y": true
+			},
+			{
+				"texture": "d_cogwheel_01_001.png",
+				"color_type": "Detail",
+				"y": 0.18000030517578125,
+				"z": 1,
+				"flip_y": true
+			}
+		]
+	},
+	"86": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"87": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"88": {
+		"color_type": "Black",
+		"default_base_color_channel": 1004,
+		"children": [
+			{
+				"texture": "sawblade_01_001.png",
+				"color_type": "Black",
+				"x": -0.06999969482421875,
+				"z": -1,
+				"rot": -180
+			}
+		]
+	},
+	"89": { "color_type": "Black", "default_base_color_channel": 1004 },
+	"90": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "block005b_05_001.png", "color_type": "Black", "z": -1 }
+		]
+	},
+	"91": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "block005b_05_001.png", "color_type": "Black", "z": -1 }
+		]
+	},
+	"92": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "block005b_05_001.png", "color_type": "Black", "z": -1 }
+		]
+	},
+	"93": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "block005b_05_001.png", "color_type": "Black", "z": -1 }
+		]
+	},
+	"94": { "color_type": "Black", "default_base_color_channel": 1004 },
+	"95": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "block005b_05_001.png", "color_type": "Black", "z": -1 }
+		]
+	},
+	"96": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "block005b_05_001.png", "color_type": "Black", "z": -1 },
+			{
+				"texture": "blockOutline_05_001.png",
+				"color_type": "Base",
+				"z": 1,
+				"scale_x": -1
+			}
+		]
+	},
+	"97": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"98": { "color_type": "Black", "default_base_color_channel": 1004 },
+	"103": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"106": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"107": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"110": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"113": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"114": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"115": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"116": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"117": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"118": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"119": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{ "texture": "square_f_05_001.png", "color_type": "Base", "z": -1 }
+		]
+	},
+	"120": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"121": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"122": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"123": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"124": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"125": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"126": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"127": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"128": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"129": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"130": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"131": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"132": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"133": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"134": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"135": { "color_type": "Black", "default_base_color_channel": 1004 },
+	"136": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"137": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006,
+		"children": [
+			{
+				"texture": "d_wheel_01_001.png",
+				"color_type": "Detail",
+				"x": -0.20000076293945312,
+				"z": -1,
+				"flip_x": true
+			}
+		]
+	},
+	"138": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"139": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"143": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"144": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"145": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"146": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"150": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1006
+	},
+	"151": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"152": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"153": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1005
+	},
+	"157": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1007
+	},
+	"158": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1007
+	},
+	"159": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1007
+	},
+	"170": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"171": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"172": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"173": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"174": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"175": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"176": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"195": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{
+				"texture": "square_01_small_color_001.png",
+				"color_type": "Black",
+				"z": -1
+			}
+		]
+	},
+	"196": {
+		"color_type": "Base",
+		"default_base_color_channel": 1004,
+		"children": [
+			{
+				"texture": "plank_01_small_color_001.png",
+				"color_type": "Black",
+				"z": -1
+			}
+		]
+	},
+	"392": { "color_type": "Base", "default_base_color_channel": 1004 },
+	"1889": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1010
+	},
+	"1890": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1010
+	},
+	"1891": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1010
+	},
+	"1892": {
+		"color_type": "Detail",
+		"swap_base_detail": true,
+		"default_base_color_channel": 1010
+	}
+}

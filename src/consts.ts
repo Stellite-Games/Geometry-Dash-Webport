@@ -77,9 +77,32 @@ export const LEVEL_IDS = [
 	3001, 5001, 5002, 5003, 5004,
 ];
 
-export interface ConversionStats {
-	total: number;
-	kept: number;
-	stripped: number;
-	score: number;
-}
+export const LEVEL_SONGS: Record<number, string> = {
+	1: "Stereo Madness",
+	2: "Back On Track",
+	3: "Polargeist",
+	4: "Dry Out",
+	5: "Base After Base",
+	6: "Can't Let Go",
+	7: "Jumper",
+	8: "Time Machine",
+	9: "Cycles",
+	10: "xStep",
+	11: "Clutterfunk",
+	12: "Theory of Everything",
+	13: "Electroman Adventures",
+	14: "Clubstep",
+	15: "Electrodynamix",
+	16: "Hexagon Force",
+	17: "Blast Processing",
+	18: "Theory of Everything 2",
+	19: "Geometrical Dominator",
+	20: "Deadlocked",
+	21: "Fingerdash",
+	22: "Dash",
+	3001: "Clubstep",
+	5001: "Power Trip",
+	5002: "Stay Inside Me",
+	5003: "Stereo Madness",
+	5004: "Stereo Madness",
+};

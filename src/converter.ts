@@ -1,30 +1,23 @@
 import pako from "pako";
 
-const SUPPORTED_IDS = new Set([
-	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23,
-	24, 25, 26, 27, 28, 29, 30, 32, 33, 35, 36, 39, 40, 41, 50, 54, 61, 62, 65,
-	67, 68, 73, 83, 103, 104, 105, 110, 140, 142, 195, 196, 221, 392, 899, 901,
-	1006,
-]);
-
 const TRIGGER_IDS = new Set([
-	22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 104, 105, 221, 899, 901, 1006,
+	22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 55, 56, 57, 58, 59, 104, 105,
+	221, 717, 718, 743, 744, 900, 915, 899, 901, 1006, 1007, 1049, 1268, 1346,
+	1347, 1520, 1585, 1595, 1611, 1612, 1613, 1615, 1616, 1811, 1812, 1814, 1815,
+	1817, 1818, 1819, 1912, 1913, 1914, 1916, 1917, 1931, 1932, 1933, 1934, 1935,
+	2015, 2016, 2062, 2063, 2066, 2067, 2068, 2069, 2899, 2900, 2901, 2903, 2904,
+	2909, 2910, 2912, 2916, 2919, 2920, 2921, 2922, 2923, 2924, 2925, 2999, 3006,
+	3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3022, 3024, 3029,
+	3030, 3031, 3032, 3033, 3600, 3602, 3603, 3604, 3605, 3606, 3607, 3608, 3609,
+	3612, 3613, 3614, 3615, 3617, 3618, 3619, 3620, 3640, 3641, 3642, 3643, 3645,
+	3655, 3660, 3661, 3662,
 ]);
-const PORTAL_IDS = new Set([10, 11, 12, 13]);
+const PORTAL_IDS = new Set([
+	10, 11, 12, 13, 45, 46, 47, 99, 101, 111, 200, 201, 202, 203, 286, 287, 660,
+	745, 747, 749, 1331, 1334, 1933,
+]);
 const DECO_GLOW_IDS = new Set([18, 19, 20, 21, 41]);
 const BACKGROUND_IDS = new Set([73]);
-
-const LEGACY_COLOR_MAP: Record<string, string> = {
-	kS29: "1000",
-	kS30: "1001",
-	kS31: "1002",
-	kS32: "1004",
-	kS33: "1",
-	kS34: "2",
-	kS35: "3",
-	kS36: "4",
-	kS37: "1003",
-};
 
 const DEFAULT_HEADER_KEYS: Record<string, string> = {
 	kA13: "0",
@@ -80,77 +73,6 @@ const DEFAULT_HEADER_KEYS: Record<string, string> = {
 	kA11: "0",
 };
 
-const DEFAULT_EXTRA_CHANNELS: Record<string, Record<string, string>> = {
-	"1009": {
-		"1": "0",
-		"2": "102",
-		"3": "255",
-		"4": "-1",
-		"11": "255",
-		"12": "255",
-		"13": "255",
-		"5": "1",
-		"7": "1",
-		"15": "1",
-		"18": "0",
-		"8": "1",
-	},
-	"1013": {
-		"1": "40",
-		"2": "125",
-		"3": "255",
-		"4": "-1",
-		"11": "255",
-		"12": "255",
-		"13": "255",
-		"7": "1",
-		"15": "1",
-		"18": "0",
-		"8": "1",
-	},
-	"1014": {
-		"1": "40",
-		"2": "125",
-		"3": "255",
-		"4": "-1",
-		"11": "255",
-		"12": "255",
-		"13": "255",
-		"7": "1",
-		"15": "1",
-		"18": "0",
-		"8": "1",
-	},
-	"1005": {
-		"1": "150",
-		"2": "0",
-		"3": "225",
-		"4": "-1",
-		"5": "1",
-		"11": "255",
-		"12": "255",
-		"13": "255",
-		"7": "1",
-		"15": "1",
-		"18": "0",
-		"8": "1",
-	},
-	"1006": {
-		"1": "0",
-		"2": "200",
-		"3": "255",
-		"4": "-1",
-		"5": "1",
-		"11": "255",
-		"12": "255",
-		"13": "255",
-		"7": "1",
-		"15": "1",
-		"18": "0",
-		"8": "1",
-	},
-};
-
 function b64urlDecode(str: string): Uint8Array {
 	let s = str.replace(/-/g, "+").replace(/_/g, "/");
 	while (s.length % 4) s += "=";
@@ -161,11 +83,14 @@ function b64urlDecode(str: string): Uint8Array {
 	return bytes;
 }
 
-const b64urlEncode = (data: Uint8Array): string =>
-	btoa(String.fromCharCode(...data))
+function b64urlEncode(data: Uint8Array): string {
+	let binary = "";
+	for (let i = 0; i < data.length; i++) binary += String.fromCharCode(data[i]);
+	return btoa(binary)
 		.replace(/\+/g, "-")
 		.replace(/\//g, "_")
 		.replace(/=+$/, "");
+}
 
 function decodeLevelString(encoded: string): string {
 	const compressed = b64urlDecode(encoded);
@@ -180,9 +105,9 @@ function encodeLevelString(raw: string): string {
 	return b64urlEncode(compressed);
 }
 
-function parseKV(str: string, sep = ","): Record<string, string> {
+function parseKV(str: string): Record<string, string> {
 	const result: Record<string, string> = {};
-	const parts = str.split(sep);
+	const parts = str.split(",");
 	for (let i = 0; i < parts.length - 1; i += 2) {
 		result[parts[i]] = parts[i + 1];
 	}
@@ -195,65 +120,10 @@ const serializeKV = (obj: Record<string, string>): string =>
 		.map(([k, v]) => `${k},${v}`)
 		.join(",");
 
-function convertLegacyColorToKS38(header: Record<string, string>): string {
-	const channels: Record<string, string>[] = [];
-
-	for (const [legacyKey, channelId] of Object.entries(LEGACY_COLOR_MAP)) {
-		const raw = header[legacyKey];
-		if (!raw) continue;
-
-		const data = parseKV(raw, "_");
-		const channel: Record<string, string> = {
-			"1": data["1"] || "255",
-			"2": data["2"] || "255",
-			"3": data["3"] || "255",
-		};
-
-		const playerColor = data["4"];
-		const blending = data["5"];
-
-		if (playerColor && playerColor !== "0") {
-			channel["4"] = "-1";
-			channel["11"] = "255";
-			channel["12"] = "255";
-			channel["13"] = "255";
-			channel["15"] = "1";
-		} else {
-			channel["15"] = "0";
-		}
-
-		if (blending && blending !== "0") {
-			channel["5"] = "1";
-		}
-
-		channel["6"] = channelId;
-		channel["7"] = "1";
-		channel["18"] = "0";
-		channel["8"] = "1";
-
-		channels.push(channel);
-	}
-
-	for (const [channelId, defaults] of Object.entries(DEFAULT_EXTRA_CHANNELS))
-		if (!channels.some((ch) => ch["6"] === channelId))
-			channels.push({ ...defaults, "6": channelId });
-
-	return `${channels
-		.map((ch) =>
-			Object.entries(ch)
-				.map(([k, v]) => `${k}_${v}`)
-				.join("_"),
-		)
-		.join("|")}|`;
-}
-
 function convertHeader(header: Record<string, string>): Record<string, string> {
-	const isLegacy = !header.kS38 && header.kS29 !== undefined;
-	const out: Record<string, string> = {};
-	out.kS38 = isLegacy ? convertLegacyColorToKS38(header) : header.kS38;
-
+	const out = { ...header };
 	for (const [key, defaultVal] of Object.entries(DEFAULT_HEADER_KEYS)) {
-		out[key] = header[key] !== undefined ? header[key] : defaultVal;
+		out[key] ??= defaultVal;
 	}
 
 	return out;
@@ -274,11 +144,7 @@ function convertObject(obj: Record<string, string>): Record<string, string> {
 	if (out["5"] === "0") delete out["5"];
 	if (out["6"] === "0") delete out["6"];
 
-	if (id === 29) {
-		Object.assign(out, { "23": "1000", "35": "1", "36": "1" });
-	} else if (id === 30) {
-		Object.assign(out, { "23": "1001", "35": "1", "36": "1" });
-	} else if (id === 899) {
+	if (id === 899) {
 		out["35"] = out["35"] || "1";
 		out["36"] = out["36"] || "1";
 	} else if (id === 901 || id === 1006) {
@@ -292,12 +158,12 @@ function convertObject(obj: Record<string, string>): Record<string, string> {
 	return out;
 }
 
-export interface ConversionResult {
+const COIN_ID = 142;
+
+export function convertLevel(inputEncoded: string): {
 	encoded: string;
 	stats: { total: number; kept: number; stripped: number; score: number };
-}
-
-export function convertLevel(inputEncoded: string): ConversionResult {
+} {
 	const decoded = decodeLevelString(inputEncoded.trim());
 	const segments = decoded.split(";");
 	const header = parseKV(segments[0]);
@@ -305,19 +171,41 @@ export function convertLevel(inputEncoded: string): ConversionResult {
 	const parts = [serializeKV(convertedHeader)];
 	let kept = 0;
 	let stripped = 0;
-	for (let i = 1; i < segments.length; i++) {
-		const s = segments[i].trim();
-		if (!s) continue;
 
-		const obj = parseKV(s);
+	const coinXPositions: number[] = [];
+	for (let idx = 1; idx < segments.length; idx++) {
+		const seg = segments[idx].trim();
+		if (!seg) continue;
+		const obj = parseKV(seg);
 		const id = parseInt(obj["1"], 10);
-		if (!SUPPORTED_IDS.has(id)) {
-			stripped++;
+		if (id === COIN_ID) {
+			coinXPositions.push(parseFloat(obj["2"] || "0"));
+		}
+	}
+	const sortedCoinX = [...coinXPositions].sort((posA, posB) => posA - posB);
 
+	let coinCounter = 0;
+	for (let idx = 1; idx < segments.length; idx++) {
+		const seg = segments[idx].trim();
+		if (!seg) continue;
+
+		const obj = parseKV(seg);
+		const id = parseInt(obj["1"], 10);
+		if (Number.isNaN(id)) {
+			stripped++;
 			continue;
 		}
 
-		parts.push(serializeKV(convertObject(obj)));
+		const converted = convertObject(obj);
+
+		if (id === COIN_ID) {
+			const xPos = parseFloat(obj["2"] || "0");
+			const coinIndex = sortedCoinX.indexOf(xPos);
+			converted["200"] = String(coinIndex >= 0 ? coinIndex : coinCounter);
+			coinCounter++;
+		}
+
+		parts.push(serializeKV(converted));
 		kept++;
 	}
 
